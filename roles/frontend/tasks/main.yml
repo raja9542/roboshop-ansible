@@ -22,7 +22,7 @@
 #systemctl restart nginx &>>${LOG}
 #status_check
 
-- name: Install the latest version of Apache
+- name: Install Nginx
   ansible.builtin.yum:
     name: nginx
     state: installed
