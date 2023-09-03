@@ -1,11 +1,4 @@
 
-#print_head "Download Frontend Content"
-#curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${LOG}
-#cd /usr/share/nginx/html/ &>>${LOG}
-#status_check
-#print_head "Extract Frontend Content"
-#unzip /tmp/frontend.zip &>>${LOG}
-#status_check
 #print_head "Copy Roboshop Nginx Config file"
 #cp ${script_location}/files/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
 #status_check
@@ -36,3 +29,8 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
     remote_src: yes
+
+- name: Copy RoboShop Confile file in Nginx
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
