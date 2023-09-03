@@ -22,7 +22,16 @@
 #systemctl restart nginx &>>${LOG}
 #status_check
 
-- name: Install Nginx
-  ansible.builtin.yum:
-    name: nginx
-    state: installed
+#- name: Install Nginx
+#  ansible.builtin.yum:
+#    name: nginx
+#    state: installed
+
+- name: Attribute default behaviour change example
+  ansible.builtin.shell: uptime
+  register: output
+  check_mode: yes
+
+- name: print output
+  debug:
+    msg: "{{output}}"
