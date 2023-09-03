@@ -30,7 +30,7 @@
 - name: Attribute default behaviour change example
   ansible.builtin.shell: uptime
   register: output
-  check_mode: yes
+  check_mode: no
 
 - name: print output
   debug:
