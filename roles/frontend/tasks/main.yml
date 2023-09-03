@@ -1,7 +1,4 @@
 
-#print_head  "Remove Nginx old content"
-#rm -rf /usr/share/nginx/html/* &>>${LOG}
-#status_check
 #print_head "Download Frontend Content"
 #curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${LOG}
 #cd /usr/share/nginx/html/ &>>${LOG}
@@ -33,3 +30,9 @@
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
+
+- name: Download and Extract Frontend App Content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
