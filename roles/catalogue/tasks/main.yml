@@ -48,7 +48,7 @@
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
 
-- name: Install Mongodb client
+- name: Install MongoDB Server
   ansible.builtin.yum:
     name: mongodb-org-shell
     state: installed
@@ -57,4 +57,4 @@
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.devopsraja66.online
     file: "/app/schema/catalogue.js"
-    idempotent: ye
+    idempotent: yes
