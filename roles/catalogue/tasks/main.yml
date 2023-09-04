@@ -51,7 +51,7 @@
 - name: Install MongoDB Server
   ansible.builtin.yum:
     name: mongodb-org-shell
-    state: installed
+    state: latest
 
 - name: Load Schema
   community.mongodb.mongodb_shell:
