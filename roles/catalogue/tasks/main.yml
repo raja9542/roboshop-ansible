@@ -52,6 +52,5 @@
 - name: Run a js file containing MongoDB commands with pseudo-idempotency
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.devopsraja66.online
-    login_password: secret
     file: "/app/schema/catalogue.js"
     idempotent: yes
