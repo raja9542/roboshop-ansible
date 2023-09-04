@@ -49,7 +49,7 @@
     name: mongodb-org-shell
     state: installed
 
-- name: Run a js file containing MongoDB commands with pseudo-idempotency
+- name: Load Schema
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.devopsraja66.online
     file: "/app/schema/catalogue.js"
