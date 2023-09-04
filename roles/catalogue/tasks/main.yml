@@ -54,7 +54,7 @@
     state: latest
 
 - name: Load Schema
-  community.mongodb.mongodb_shell:
+  community.mongodb.mongodb:
     login_host: mongodb-dev.devopsraja66.online
     file: "/app/schema/catalogue.js"
     idempotent: yes
