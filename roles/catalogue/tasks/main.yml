@@ -1,68 +1,15 @@
-- name: Configure NodeJs Yum Repos
-  ansible.builtin.shell: https://rpm.nodesource.com/setup_lts.x | bash
+- name: Import NodeJs
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs
 
-- name: Install NodeJS
-  ansible.builtin.yum:
-    name: nodejs
-    state: installed
-
-- name: Add Application User
-  ansible.builtin.user:
-    name: roboshop
-
-- name: Delete App Old Content
-  ansible.builtin.file:
-    path: /app
-    state: absent
-
-- name: Create App Directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
-
-- name: Download & Extract Catalogue App Content
-  ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
-    dest: /app
-    remote_src: yes
-
-- name: Install NodeJS Dependencies
-  community.general.npm:
-    path: /app
-    state: latest
-
-- name: Copy Catalogue Service file
-  ansible.builtin.copy:
-    src: catalogue.service
-    dest: /etc/systemd/system/catalogue.service
-
-- name: Start Catalogue Service
-  ansible.builtin.systemd:
-    name: catalogue
-    daemon_reload: yes
-    enabled: yes
-    state: restarted
-
-- name: Copy MongoDB Yum Repo file
-  ansible.builtin.copy:
-    src: mongodb.repo
-    dest: /etc/yum.repos.d/mongodb.repo
-
-- name: Install MongoDB Server
-  ansible.builtin.yum:
-    name: mongodb-org-shell
-    state: installed
+#- name: Load Schema
+#  ansible.builtin.command: mongo --host mongodb-dev.devopsraja66.online < /app/schema/catalogue.js
 
 #- name: Load Schema
 #  community.mongodb.mongodb_shell:
 #    login_host: mongodb-dev.devopsraja66.online
 #    file: "/app/schema/catalogue.js"
 #    idempotent: yes
-
-- name: Load Schema
-  ansible.builtin.shell: mongo --host mongodb-dev.devopsraja66.online < /app/schema/catalogue.js
-
-#- name: Load Schema
-#  ansible.builtin.command: mongo --host mongodb-dev.devopsraja66.online < /app/schema/catalogue.js
 
 
