@@ -54,7 +54,4 @@
     state: installed
 
 - name: Load Schema
-  community.mongodb.mongodb_shell:
-    login_host: mongodb-dev.devopsraja66.online
-    file: "/app/schema/catalogue.js"
-    idempotent: yes
+  ansible.builtin.command: mongo --host mongodb-dev.devopsraja66.online < /app/schema/catalogue.js
