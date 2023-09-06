@@ -1,7 +1,7 @@
 - name: Install Python Dependencies
   ansible.builtin.yum:
     name:
-      - python3-PyMySQL
+      - python39-PyMySQL
       - sql
     state: installed
 
