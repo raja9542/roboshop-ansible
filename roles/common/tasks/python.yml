@@ -1,0 +1,34 @@
+#print_head "Download the Dependencies."
+#cd /app
+#pip3.6 install -r requirements.txt &>>${LOG}
+#
+#print_head "Update Password in ${component} service file"
+#sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}/" ${script_location}/files/${component}.service
+#status_check
+#
+#SYSTEMD_SETUP
+
+- name: Install Python3
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: APP- PreReq
+  ansible.builtin.include_tasks: "app-prereq.yml"
+
+- name: Download Python Dependencies
+  ansible.builtin.pip:
+    requirements: /app/requirements.txt
+    executable: pip3.6
+
+- name: Setup SystemD
+  ansible.builtin.include_tasks: "systemd.yml"
+
+- name: Load Schema
+  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
+  when: schema_load
+
+
