@@ -1,8 +1,9 @@
 - name: Configure Erlang & RabbitMQ Repos
-  ansible.builtin.shell: curl -s {{ item }} | sudo bash
+  ansible.builtin.shell: curl -sL {{ item }} | sudo bash
   loop:
-    - https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
     - https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+    - https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
 
 - name: Install Erlang & RabbitMQ
   ansible.builtin.yum:
