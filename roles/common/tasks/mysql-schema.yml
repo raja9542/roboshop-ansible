@@ -1,23 +1,23 @@
-#- name: Install Python Dependencies
-#  ansible.builtin.yum:
-#    name:
-#      - python3-PyMySQL
-#      - mysql
-#    state: installed
-#
-#- name: Load MYSQL Schema
-#  community.mysql.mysql_db:
-#    state: import
-#    name: all
-#    target: /app/schema/{{component}}.sql
-#    login_host: mysql-dev.devopsraja66.online
-#    login_user: root
-#    login_password: "{{root_mysql_password}}"
-
-- name: Install MYSQL Client
+- name: Install Python Dependencies
   ansible.builtin.yum:
-    name: mysql
+    name:
+      - python3-PyMySQL
+      - mysql
     state: installed
 
-- name: Load Schema
-  ansible.builtin.shell: mysql -h mysql-dev.devopsraja66.online -uroot -p{{root_mysql_password}} < /app/schema/{{component}}.sql
+- name: Load MYSQL Schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: /app/schema/{{component}}.sql
+    login_host: mysql-dev.devopsraja66.online
+    login_user: root
+    login_password: "{{root_mysql_password}}"
+
+#- name: Install MYSQL Client
+#  ansible.builtin.yum:
+#    name: mysql
+#    state: installed
+#
+#- name: Load Schema
+#  ansible.builtin.shell: mysql -h mysql-dev.devopsraja66.online -uroot -p{{root_mysql_password}} < /app/schema/{{component}}.sql
