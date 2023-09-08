@@ -21,8 +21,8 @@
 
 - name: Remove Old Roboshop Config file
   ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: /etc/nginx/default.d/roboshop.conf
+    path: /etc/nginx/default.d/roboshop.conf
+    state: absent
 
 - name: Copy RoboShop Config file in Nginx
   ansible.builtin.copy:
