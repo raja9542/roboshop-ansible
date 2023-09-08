@@ -25,10 +25,10 @@
         - {name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.devopsraja66.online:27017/users"}
         - {name: "dev.user.REDIS_HOST", value: "redis-dev.devopsraja66.online"}
         - {name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.devopsraja66.online:8080/"}
-        - {name: "dev.frontend.CATALOGUE_URL", value: "http://user-dev.devopsraja66.online:8080/"}
-        - {name: "dev.frontend.CATALOGUE_URL", value: "http://cart-dev.devopsraja66.online:8080/"}
-        - {name: "dev.frontend.CATALOGUE_URL", value: "http://shipping-dev.devopsraja66.online:8080/"}
-        - {name: "dev.frontend.CATALOGUE_URL", value: "http://payment-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.USER_URL", value: "http://user-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.CART_URL", value: "http://cart-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.SHIPPING_URL", value: "http://shipping-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.PAYMENT_URL", value: "http://payment-dev.devopsraja66.online:8080/"}
 
         ## Passwords should never be in this repos, those should be created manually, for lab purpose only we are doing .
 
