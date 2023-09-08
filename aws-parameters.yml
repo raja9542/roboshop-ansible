@@ -31,4 +31,16 @@
         - {name: "dev.frontend.CATALOGUE_URL", value: "http://payment-dev.devopsraja66.online:8080/"}
 
         ## Passwords should never be in this repos, those should be created manually, for lab purpose only we are doing .
-        - {name: "dev.payment.AMQP_PASS", value: "roboshop123"}
+
+    - name: Create Parameters
+      hosts: localhost
+      connection: local
+      string_type: "SecureString"
+      tasks:
+        - name: Create or update key/value pair in AWS SSM parameter store
+          community.aws.ssm_parameter:
+            name: "{{item.name}}"
+            value: "{{item.value}}"
+            region: us-east-1
+          loop:
+           - {name: "dev.payment.AMQP_PASS", value: "roboshop123"}
