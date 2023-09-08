@@ -9,3 +9,26 @@
         region: us-east-1
       loop:
         - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devopsraja66.online"}
+        - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devopsraja66.online"}
+        - {name: "dev.catalogue.MONGO", value: "true"}
+        - {name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.devopsraja66.online:27017/catalogue"}
+        - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devopsraja66.online"}
+        - {name: "dev.payment.CART_HOST", value: "cart-dev.devopsraja66.online"}
+        - {name: "dev.payment.CART_PORT", value: "8080"}
+        - {name: "dev.payment.USER_HOST", value: "user-dev.devopsraja66.online"}
+        - {name: "dev.payment.USER_PORT", value: "8080"}
+        - {name: "dev.payment.AMQP_HOST", value: "rabbitmq-dev.devopsraja66.online"}
+        - {name: "dev.payment.AMQP_USER", value: "roboshop"}
+        - {name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.devopsraja66.online:8080"}
+        - {name: "dev.shipping.DB_HOST", value: "mysql-dev.devopsraja66.online:8080"}
+        - {name: "dev.user.MONGO", value: "true"}
+        - {name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.devopsraja66.online:27017/users"}
+        - {name: "dev.user.REDIS_HOST", value: "redis-dev.devopsraja66.online"}
+        - {name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.CATALOGUE_URL", value: "http://user-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.CATALOGUE_URL", value: "http://cart-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.CATALOGUE_URL", value: "http://shipping-dev.devopsraja66.online:8080/"}
+        - {name: "dev.frontend.CATALOGUE_URL", value: "http://payment-dev.devopsraja66.online:8080/"}
+
+        ## Passwords should never be in this repos, those should be created manually, for lab purpose only we are doing .
+        - {name: "dev.payment.AMQP_PASS", value: "roboshop123"}
