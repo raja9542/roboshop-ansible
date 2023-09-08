@@ -35,12 +35,12 @@
     - name: Create Parameters
       hosts: localhost
       connection: local
-      string_type: "SecureString"
       tasks:
         - name: Create or update key/value pair in AWS SSM parameter store
           community.aws.ssm_parameter:
             name: "{{item.name}}"
             value: "{{item.value}}"
             region: us-east-1
+            string_type: "SecureString"
           loop:
            - {name: "dev.payment.AMQP_PASS", value: "roboshop123"}
