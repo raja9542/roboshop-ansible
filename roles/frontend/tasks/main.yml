@@ -19,6 +19,11 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
+- name: Remove Old Roboshop Config file
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: /etc/nginx/default.d/roboshop.conf
+
 - name: Copy RoboShop Config file in Nginx
   ansible.builtin.copy:
     src: roboshop.conf
