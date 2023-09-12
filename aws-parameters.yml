@@ -13,7 +13,6 @@
         - {name: "dev.cart.CATALOGUE_PORT", value: "8080"}
         - {name: "dev.catalogue.MONGO", value: "true"}
         - {name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.devopsraja66.online:27017/catalogue"}
-        - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devopsraja66.online"}
         - {name: "dev.payment.CART_HOST", value: "cart-dev.devopsraja66.online"}
         - {name: "dev.payment.CART_PORT", value: "8080"}
         - {name: "dev.payment.USER_HOST", value: "user-dev.devopsraja66.online"}
