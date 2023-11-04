@@ -13,6 +13,8 @@
     login_host: mysql-dev.devopsraja66.online
     login_user: root
     login_password: "{{root_mysql_password}}"
+  vars:
+    root_mysql_password: "{{ lookup('aws_ssm', '{{env}}.{{component}}.DB_ADMIN_PASS', region='us-east-1' ) }}"
 
 #- name: Install MYSQL Client
 #  ansible.builtin.yum:
