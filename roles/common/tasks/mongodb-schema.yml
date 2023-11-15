@@ -12,7 +12,7 @@
 #  ansible.builtin.shell: mongo --host mongodb-dev.devopsraja66.online < /app/schema/{{component}}.js
 
 - name: Load Schema
-  ansible.builtin.shell: mongo --ssl --host dev-docdb-cluster.cluster-cpy5ddqj3otr.us-east-1.docdb.amazonaws.com:27017 --sslCAFile /app/global-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }}
+  ansible.builtin.shell: mongo --ssl --host dev-docdb-cluster.cluster-cpy5ddqj3otr.us-east-1.docdb.amazonaws.com:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }}
 
 
 # we need to provide docdb username and password
