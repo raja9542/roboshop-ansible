@@ -7,22 +7,23 @@
       - { tag: "env", label: "environment"}
       - { tag: "Name", label: "name"}
 
-- name: Restart Prometheus
-  ansible.builtin.systemd:
-    name: prometheus
-    state: restarted
 
 - name: Copy Record Rules
   ansible.builtin.template:
     src: record-rules.yml
     dest: /opt/prometheus/record-rules.yml
-    remote_src: yes
+
 
 - name: Copy Alert Rules
   ansible.builtin.template:
     src: alert-rules.yml
     dest: /opt/prometheus/alert-rules.yml
-    remote_src: yes
+
+
+- name: Restart Prometheus
+  ansible.builtin.systemd:
+    name: prometheus
+    state: restarted
 
 ## Grafana
 
