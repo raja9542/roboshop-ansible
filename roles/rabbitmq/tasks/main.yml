@@ -17,18 +17,6 @@
     state: restarted
     enabled: yes
 
-#- name: Add Application User
-#  community.rabbitmq.rabbitmq_user:
-#    user: roboshop
-#    password: "{{ roboshop_rabbitmq_password }}"
-#    vhost: /
-#    configure_priv: .*
-#    read_priv: .*
-#    write_priv: .*
-#    state: present
-#    tags: administrator
-#    vars:
-#      roboshop_rabbitmq_password: "{{ lookup('aws_ssm', '{{env}}.{{component}}.AMQP_PASS', region='us-east-1' ) }}"
 
 - name: Add Application User
   community.rabbitmq.rabbitmq_user:
