@@ -54,6 +54,8 @@
         - { name: "dev.rabbitmq.USER", value: "roboshop" }
         - { name: "dev.rabbitmq.PASS", value: "roboshop1234" }
         - { name: "grafana.api_key", value: "glsa_cVr7IOSCJKeEUWR6og6o5iNkV7wjIVX1_a4cf4d24" }
+        - { name: "ses.user", value: "AKIA6PGVZTFWHR7EE6PT" }
+        - { name: "ses.pass", value: "BOLVJSQE/g86J/Nc6sc/Pk2OxYPhCCdTtXAZ14YrV3WH" }
 #  rabbitmq expects 12 digit password
 
 
