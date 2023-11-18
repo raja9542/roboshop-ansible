@@ -53,6 +53,7 @@
         - { name: "dev.rds.DB_ADMIN_PASS", value: "RoboShop123" }
         - { name: "dev.rabbitmq.USER", value: "roboshop" }
         - { name: "dev.rabbitmq.PASS", value: "roboshop1234" }
+        - { name: "grafana.api_key", value: "glsa_cVr7IOSCJKeEUWR6og6o5iNkV7wjIVX1_a4cf4d24" }
 #  rabbitmq expects 12 digit password
 
 
