@@ -18,6 +18,12 @@
     dest: /opt/prometheus/record-rules.yml
     remote_src: yes
 
+- name: Copy Alert Rules
+  ansible.builtin.template:
+    src: alert-rules.yml
+    dest: /opt/prometheus/alert-rules.yml
+    remote_src: yes
+
 ## Grafana
 
 #- name: Make Template
