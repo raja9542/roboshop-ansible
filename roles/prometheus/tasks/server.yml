@@ -12,18 +12,24 @@
     name: prometheus
     state: restarted
 
-## Grafana
-
-- name: Make Template
+- name: Copy Record Rules
   ansible.builtin.template:
-    src: grafana-template.json
-    dest: /tmp/grafana.json
+    src: record-rules.yml
+    dest: /opt/prometheus/record-rules.yml
     remote_src: yes
 
-- name: Import Grafana dashboard
-  community.grafana.grafana_dashboard:
-    grafana_url: http://172.31.34.153:3000
-    grafana_api_key: "{{ grafana_api_key }}"
-    state: present
-    overwrite: yes
-    path: /tmp/grafana.json
+## Grafana
+
+#- name: Make Template
+#  ansible.builtin.template:
+#    src: grafana-template.json
+#    dest: /tmp/grafana.json
+#    remote_src: yes
+#
+#- name: Import Grafana dashboard
+#  community.grafana.grafana_dashboard:
+#    grafana_url: http://172.31.34.153:3000
+#    grafana_api_key: "{{ grafana_api_key }}"
+#    state: present
+#    overwrite: yes
+#    path: /tmp/grafana.json
