@@ -9,7 +9,9 @@
     src: alert.yml
     dest: /tmp/alert.yml
 
-
+- name: Copy Prometheus Alert Configuration to prometheus server
+  ansible.builtin.shell: sshpass -p "{{ lookup('aws_ssm', '{{env}}.ss.pass', region='us-east-1' ) }}" scp /tmp/alert.yml "{{ lookup('aws_ssm', '{{env}}.ss.user', region='us-east-1' ) }}"@172.31.34.153:/opt/prometheus/alerts/{{component}}.yml
+#sshpass -p DevOps321 scp /tmp/alert.yml centos@172.31.34.153(prometehusprivateip):/opt/prometheus/alerts/{{component}}.yml
 - name: Make Template
   ansible.builtin.template:
     src: grafana-template.json
