@@ -4,6 +4,12 @@
 - name: Install Prometheus Node Exporter
   ansible.builtin.shell: labauto prometheus-node-exporter
 
+- name: Setup Prometheus Alert Configuration
+  ansible.builtin.template:
+    src: alert.yml
+    dest: /tmp/alert.yml
+
+
 - name: Make Template
   ansible.builtin.template:
     src: grafana-template.json
