@@ -26,6 +26,7 @@
     login_password: "{{ lookup('aws_ssm', '{{env}}.rds.DB_ADMIN_PASS', region='us-east-1' ) }}"
   when: "'cities' not in out.databases"
 # this schema loads only cities schema not loaded into DB
+# cities is our schema name
 
 #- name: print out
 #  debug:
