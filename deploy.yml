@@ -1,0 +1,9 @@
+- name: RoboShop Application Deployment
+  hosts: all
+  become: yes
+  tasks:
+    - name: Import Deployment
+      ansible.builtin.import_role:
+        name: common
+        tasks_from: deploy
+
