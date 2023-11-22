@@ -57,6 +57,14 @@
         - { name: "prod.frontend.CART_URL", value: "http://cart-prod.devopsraja66.online:80/" }
         - { name: "prod.frontend.SHIPPING_URL", value: "http://shipping-prod.devopsraja66.online:80/" }
         - { name: "prod.frontend.PAYMENT_URL", value: "http://payment-prod.devopsraja66.online:80/" }
+        - { name: "prod.cart.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.catalogue.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.user.APP_VERSION", value: "1.0.2" }
+        - { name: "prod.shipping.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.payment.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.dispatch.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.frontend.APP_VERSION", value: "1.0.0" }
+
 
         ## Passwords should never be in this repos, those should be created manually, for lab purpose only we are doing .
         # prviously the traffic comes from 8080 now the traffic comes from ALB from http 80 port
@@ -101,13 +109,6 @@
         - { name: "ses.pass", value: "BOLVJSQE/g86J/Nc6sc/Pk2OxYPhCCdTtXAZ14YrV3WH" }
         - { name: "prod.ssh.user", value: "centos" }
         - { name: "prod.ssh.pass", value: "DevOps321" }
-        - { name: "prod.cart.APP_VERSION", value: "1.0.0" }
-        - { name: "prod.catalogue.APP_VERSION", value: "1.0.0" }
-        - { name: "prod.user.APP_VERSION", value: "1.0.2" }
-        - { name: "prod.shipping.APP_VERSION", value: "1.0.0" }
-        - { name: "prod.payment.APP_VERSION", value: "1.0.0" }
-        - { name: "prod.dispatch.APP_VERSION", value: "1.0.0" }
-        - { name: "prod.frontend.APP_VERSION", value: "1.0.0" }
 #  rabbitmq expects 12 digit password
 
 ## prod
