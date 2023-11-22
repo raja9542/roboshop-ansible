@@ -101,6 +101,13 @@
         - { name: "ses.pass", value: "BOLVJSQE/g86J/Nc6sc/Pk2OxYPhCCdTtXAZ14YrV3WH" }
         - { name: "prod.ssh.user", value: "centos" }
         - { name: "prod.ssh.pass", value: "DevOps321" }
+        - { name: "prod.cart.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.catalogue.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.user.APP_VERSION", value: "1.0.2" }
+        - { name: "prod.shipping.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.payment.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.dispatch.APP_VERSION", value: "1.0.0" }
+        - { name: "prod.frontend.APP_VERSION", value: "1.0.0" }
 #  rabbitmq expects 12 digit password
 
 ## prod
