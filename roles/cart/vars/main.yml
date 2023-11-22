@@ -1,4 +1,4 @@
 component: cart
 schema_load: false
-app_version: "{{ lookup('aws_ssm', '{{env}}.{{component}}.APP_VERSION', region='us-east-1') }}"
+#app_version: "{{ lookup('aws_ssm', '{{env}}.{{component}}.APP_VERSION', region='us-east-1') }}"
 service_name: cart
